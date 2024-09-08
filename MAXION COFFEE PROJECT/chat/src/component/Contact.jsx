@@ -90,6 +90,23 @@ const Contact = () => {
       </div>
     </div>
         </section>
+        <section className="bg-gray-100 py-12">
+  <div className="container mx-auto px-5">
+    <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">Câu Hỏi Thường Gặp</h2>
+    <div className="space-y-4">
+      <div className="bg-white p-6 rounded-lg shadow-md">
+        <h3 className="text-xl font-semibold text-gray-800">Chúng tôi có thể đặt hàng online không?</h3>
+        <p className="text-gray-600 mt-2">Có, bạn có thể đặt hàng online thông qua trang web của chúng tôi và chúng tôi sẽ giao hàng tận nơi cho bạn.</p>
+      </div>
+      <div className="bg-white p-6 rounded-lg shadow-md">
+        <h3 className="text-xl font-semibold text-gray-800">Có các tùy chọn cà phê nào có sẵn?</h3>
+        <p className="text-gray-600 mt-2">Chúng tôi cung cấp nhiều loại cà phê khác nhau, bao gồm cà phê espresso, cappuccino, latte, và nhiều loại cà phê đặc biệt khác.</p>
+      </div>
+      {/* Thêm nhiều câu hỏi và trả lời khác nếu cần */}
+    </div>
+  </div>
+</section>
+
       </div>
       
     );

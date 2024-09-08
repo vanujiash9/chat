@@ -3,12 +3,10 @@ import Hero from './Hero';
 
 const About = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [title, setTitle] = useState("Khám Phá Hương Vị Cà Phê Đặc Biệt.");
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  const handleMouseEnter = () => setTitle("Cà Phê Tươi Mới Mỗi Ngày");
-  const handleMouseLeave = () => setTitle("Khám Phá Hương Vị Cà Phê Đặc Biệt.");
+
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
     document.documentElement.classList.toggle('dark', !isDarkMode);
@@ -18,12 +16,14 @@ const About = () => {
     <div className={isDarkMode ? 'bg-gray-900 text-gray-100' : 'bg-white text-gray-900'}>
       {/* Dark Mode Toggle */}
       <div className="fixed top-4 right-4 z-30">
-        <button
-          className="bg-gray-800 text-white py-2 px-4 rounded-md dark:bg-gray-300 dark:text-black hover:bg-gray-700 dark:hover:bg-gray-400"
-          onClick={toggleDarkMode}
-        >
-          {isDarkMode ? 'Chế Độ Sáng' : 'Chế Độ Tối'}
-        </button>
+      <button
+  aria-label={isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+  className="bg-gray-800 text-white py-2 px-4 rounded-md dark:bg-gray-300 dark:text-black hover:bg-gray-700 dark:hover:bg-gray-400"
+  onClick={toggleDarkMode}
+>
+  {isDarkMode ? 'Chế Độ Sáng' : 'Chế Độ Tối'}
+</button>
+
       </div>
 
       {/* Hero Component */}
@@ -68,43 +68,7 @@ const About = () => {
             {/* Placeholder for Mobile Menu Items */}
           </div>
         </div>
-        
-        {/* Title and Search */}
-        <section className="min-h-[calc(100vh-69px)] flex items-center justify-center px-1 z-10">
-          <div className="flex flex-col gap-4 pb-3 sm:min-w-[448px] max-w-md">
-            <h1 className="text-4xl text-orange-600 text-center font-semibold tracking-wider">
-              Khám Phá Hương Vị Cà Phê
-            </h1>
-            <h2 className="text-2xl transition-transform duration-500 mt-1">
-              {title}
-            </h2>
-            <div className="flex flex-col gap-5 sm:gap-7 items-center mt-2">
-              <div className="flex items-center gap-4">
-                <div
-                  className="rounded-full w-12 h-12 flex items-center justify-center bg-white shadow-md hover:shadow-orange-600 cursor-pointer group"
-                  onMouseEnter={handleMouseEnter}
-                  onMouseLeave={handleMouseLeave}
-                >
-                  {/* Placeholder for SVG Icon */}
-                </div>
-                {/* More SVG Icons */}
-              </div>
-              <div className="flex min-w-[100px] sm:min-w-[360px] max-w-[360px]">
-                <div className="flex bg-white py-2.5 pl-2 pr-1 rounded-l-lg items-center gap-1.5 w-full">
-                  {/* SVG Icon */}
-                  <input
-                    type="text"
-                    className="py-1 outline-none placeholder:text-xs sm:placeholder:text-sm dark:placeholder-gray-400"
-                    placeholder="Địa chỉ, Thành phố, Tỉnh"
-                  />
-                </div>
-                <button className="bg-orange-600 px-6 py-1 text-base lg:text-lg font-semibold text-white rounded-r-lg shadow-md">
-                  Tìm Kiếm
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
+       
         
         {/* Gallery Section */}
         <section className="container mx-auto px-5 py-2 lg:px-32 lg:pt-24 flex items-center">
@@ -115,52 +79,172 @@ const About = () => {
           </div>
         </section>
         
-        {/* Additional Content */}
-        <section className="relative flex flex-col items-center mx-auto lg:flex-row-reverse lg:max-w-5xl lg:mt-12 xl:max-w-6xl mb-16">
-          {/* Image Column */}
-          <div className="w-full h-64 lg:w-1/2 lg:h-auto">
-            <img className="h-full w-full object-cover rounded-lg shadow-lg" src="https://picsum.photos/id/1018/2000" alt="Winding Mountain Road" />
-          </div>
-          {/* Text Column */}
-          <div className="max-w-lg bg-white md:max-w-2xl md:z-10 md:shadow-lg md:absolute md:top-0 md:mt-48 lg:w-3/5 lg:left-0 lg:mt-20 lg:ml-20 xl:mt-24 xl:ml-12 dark:bg-gray-800 dark:text-gray-100">
-            <div className="flex flex-col p-12 md:px-16">
-              <h2 className="text-2xl font-medium uppercase text-green-800 lg:text-4xl dark:text-green-300">
-                Con Đường Núi Uốn Lượn
-              </h2>
-              <p className="mt-4 text-gray-700 dark:text-gray-300">
-                Tại quán cà phê của chúng tôi, chúng tôi cam kết mang đến cho bạn những trải nghiệm cà phê độc đáo nhất. Chúng tôi sử dụng hạt cà phê tươi mới được chọn lọc kỹ lưỡng từ các nông trại hàng đầu, cùng với kỹ thuật pha chế chuyên nghiệp để tạo ra những tách cà phê hoàn hảo.
-              </p>
-              <div className="mt-8">
-                <a href="#" className="inline-block w-full text-center text-lg font-medium bg-green-600 border-solid border-2 border-gray-600 py-4 px-10 text-gray-100 hover:bg-green-800 hover:shadow-md md:w-48 dark:bg-green-800 dark:border-gray-500 dark:hover:bg-green-700">
-                  Xem Thêm
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* About Us Section */}
-        <section className="2xl:container 2xl:mx-auto lg:py-16 lg:px-20 md:py-12 md:px-6 py-9 px-4">
-          <div className="flex flex-col lg:flex-row justify-between gap-8">
-            <div className="w-full lg:w-5/12 flex flex-col justify-center">
-              <h1 className="text-3xl lg:text-4xl font-bold leading-9 text-gray-800 dark:text-gray-100 pb-4">Giới Thiệu Về Chúng Tôi</h1>
-              <p className="font-normal text-base leading-6 text-gray-600 dark:text-gray-300">
-                Chúng tôi không chỉ là một quán cà phê; chúng tôi là một nơi để thư giãn, kết nối và thưởng thức những hương vị cà phê tuyệt vời nhất. Đội ngũ của chúng tôi là những người đam mê cà phê, và chúng tôi luôn nỗ lực để mang đến cho bạn trải nghiệm cà phê tốt nhất mỗi ngày.
-              </p>
-              <p className="font-normal text-base leading-6 text-gray-600 dark:text-gray-300 mt-4">
-                Mỗi tách cà phê chúng tôi phục vụ đều được chế biến từ những hạt cà phê chất lượng cao nhất, đã được rang xay ngay tại quán để đảm bảo sự tươi mới và hương vị độc đáo.
-              </p>
-            </div>
-            <div className="lg:w-7/12">
-              <img
-                src="https://images.unsplash.com/photo-1506748686214e9df14a01f2c58e21b57f4b4998e2e7e9a02e9c3de1d41c69d04"
-                alt="About Us"
-                className="object-cover object-center w-full h-full rounded-lg"
-              />
-            </div>
-          </div>
-        </section>
+       {/* Additional Content */}
+<section className="relative flex flex-col items-center mx-auto lg:flex-row-reverse lg:max-w-5xl lg:mt-12 xl:max-w-6xl mb-16">
+  {/* Image Column */}
+  <div className="w-full h-64 lg:w-1/2 lg:h-auto">
+    <img className="h-full w-full object-cover rounded-lg shadow-lg" src="https://picsum.photos/id/1018/2000" alt="Winding Mountain Road" />
+  </div>
+  {/* Text Column */}
+  <div className="max-w-lg bg-gray-50 md:max-w-2xl md:z-10 md:shadow-lg md:absolute md:top-0 md:mt-48 lg:w-3/5 lg:left-0 lg:mt-20 lg:ml-20 xl:mt-24 xl:ml-12 dark:bg-gray-700 dark:text-gray-100">
+    <div className="flex flex-col p-12 md:px-16">
+      <h2 className="text-2xl font-medium uppercase text-green-600 lg:text-4xl dark:text-green-200">
+        Con Đường Núi Uốn Lượn
+      </h2>
+      <p className="mt-4 text-gray dark:text-gray-300">
+        Tại quán cà phê của chúng tôi, chúng tôi cam kết mang đến cho bạn những trải nghiệm cà phê độc đáo nhất. Chúng tôi sử dụng hạt cà phê tươi mới được chọn lọc kỹ lưỡng từ các nông trại hàng đầu, cùng với kỹ thuật pha chế chuyên nghiệp để tạo ra những tách cà phê hoàn hảo.
+      </p>
+      <div className="mt-8">
+        <a href="#" className="inline-block w-full text-center text-lg font-medium bg-green-600 border-solid border-2 border-gray-600 py-4 px-10 text-gray-100 hover:bg-green-800 hover:shadow-md md:w-48 dark:bg-green-800 dark:border-gray-500 dark:hover:bg-green-700">
+          Xem Thêm
+        </a>
       </div>
+    </div>
+  </div>
+</section>
+
+       
+        <div className="2xl:container 2xl:mx-auto lg:py-16 lg:px-20 md:py-12 md:px-6 py-9 px-4">
+            <div className="flex flex-col lg:flex-row justify-between gap-8">
+                <div className="w-full lg:w-5/12 flex flex-col justify-center">
+                    <h1 className="text-3xl lg:text-4xl font-bold leading-9 text-gray-800 pb-4">About Us</h1>
+                    <p className="font-normal text-base leading-6 text-gray-600 ">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum.In the first place we have granted to God, and by this our present charter confirmed for us and our heirs forever that the English Church shall be free, and shall have her rights entire, and her liberties inviolate; and we will that it be thus observed; which is apparent from</p>
+                </div>
+                <div className="w-full lg:w-8/12 ">
+                    <img className="w-full h-full" src="https://i.ibb.co/FhgPJt8/Rectangle-116.png" alt="A group of People" />
+                </div>
+            </div>
+
+            <div className="flex lg:flex-row flex-col justify-between gap-8 pt-12">
+                <div className="w-full lg:w-5/12 flex flex-col justify-center">
+                    <h1 className="text-3xl lg:text-4xl font-bold leading-9 text-gray-800 pb-4">Our Story</h1>
+                    <p className="font-normal text-base leading-6 text-gray-600 ">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum.In the first place we have granted to God, and by this our present charter confirmed for us and our heirs forever that the English Church shall be free, and shall have her rights entire, and her liberties inviolate; and we will that it be thus observed; which is apparent from</p>
+                </div>
+                <div className="w-full lg:w-8/12 lg:pt-8">
+                    <div className="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 lg:gap-4 shadow-lg rounded-md">
+                        <div className="p-4 pb-6 flex justify-center flex-col items-center">
+                            <img className="md:block hidden" src="https://i.ibb.co/FYTKDG6/Rectangle-118-2.png" alt="Alexa featured Img" />
+                            <img className="md:hidden block" src="https://i.ibb.co/zHjXqg4/Rectangle-118.png" alt="Alexa featured Img" />
+                            <p className="font-medium text-xl leading-5 text-gray-800 mt-4">Alexa</p>
+                        </div>
+                        <div className="p-4 pb-6 flex justify-center flex-col items-center">
+                            <img className="md:block hidden" src="https://i.ibb.co/fGmxhVy/Rectangle-119.png" alt="Olivia featured Img" />
+                            <img className="md:hidden block" src="https://i.ibb.co/NrWKJ1M/Rectangle-119.png" alt="Olivia featured Img" />
+                            <p className="font-medium text-xl leading-5 text-gray-800 mt-4">Olivia</p>
+                        </div>
+                        <div className="p-4 pb-6 flex justify-center flex-col items-center">
+                            <img className="md:block hidden" src="https://i.ibb.co/Pc6XVVC/Rectangle-120.png" alt="Liam featued Img" />
+                            <img className="md:hidden block" src="https://i.ibb.co/C5MMBcs/Rectangle-120.png" alt="Liam featued Img" />
+                            <p className="font-medium text-xl leading-5 text-gray-800 mt-4">Liam</p>
+                        </div>
+                        <div className="p-4 pb-6 flex justify-center flex-col items-center">
+                            <img className="md:block hidden" src="https://i.ibb.co/7nSJPXQ/Rectangle-121.png" alt="Elijah featured img" />
+                            <img className="md:hidden block" src="https://i.ibb.co/ThZBWxH/Rectangle-121.png" alt="Elijah featured img" />
+                            <p className="font-medium text-xl leading-5 text-gray-800 mt-4">Elijah</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <section className="bg-gray-50 py-12">
+  <div className="container mx-auto px-5">
+    <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">Đội Ngũ Của Chúng Tôi</h2>
+    <div className="flex flex-wrap gap-8 justify-center">
+      <div className="w-full sm:w-1/3 lg:w-1/4 text-center">
+        <img className="w-32 h-32 mx-auto rounded-full object-cover shadow-lg" src="https://example.com/image1.jpg" alt="Nhân viên 1" />
+        <h3 className="text-xl font-semibold mt-4">Nguyễn Văn A</h3>
+        <p className="text-gray-600">Chuyên gia pha chế cà phê</p>
+      </div>
+      <div className="w-full sm:w-1/3 lg:w-1/4 text-center">
+        <img className="w-32 h-32 mx-auto rounded-full object-cover shadow-lg" src="https://example.com/image2.jpg" alt="Nhân viên 2" />
+        <h3 className="text-xl font-semibold mt-4">Trần Thị B</h3>
+        <p className="text-gray-600">Quản lý cửa hàng</p>
+      </div>
+      {/* Thêm nhiều nhân viên khác nếu cần */}
+    </div>
+  </div>
+</section>
+<section className="py-12">
+  <div className="container mx-auto px-5">
+    <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">Lịch Sử và Di Sản</h2>
+    <div className="flex flex-col lg:flex-row gap-8">
+      <div className="lg:w-1/2">
+        <p className="text-lg text-gray-600">Quán cà phê của chúng tôi đã có một hành trình dài từ những ngày đầu thành lập. Chúng tôi tự hào về sự phát triển không ngừng và cam kết cung cấp những sản phẩm cà phê chất lượng cao. Dưới đây là những mốc quan trọng trong lịch sử của chúng tôi:</p>
+        <ul className="mt-4 list-disc pl-5">
+          <li>Mở cửa lần đầu vào năm 2000.</li>
+          <li>Giành giải thưởng "Quán cà phê tốt nhất" vào năm 2010.</li>
+          <li>Đạt được chứng nhận cà phê hữu cơ vào năm 2015.</li>
+          {/* Thêm các mốc quan trọng khác nếu có */}
+        </ul>
+      </div>
+      <div className="lg:w-1/2">
+        <img className="w-full h-auto rounded-lg shadow-lg" src="https://example.com/history-image.jpg" alt="Lịch sử và Di sản" />
+      </div>
+    </div>
+  </div>
+</section>
+<section className="bg-gray-50 py-12">
+  <div className="container mx-auto px-5 text-center">
+    <h2 className="text-3xl font-bold text-gray-800 mb-6">Nhận Tin Tức Mới Nhất</h2>
+    <p className="text-lg text-gray-600 mb-4">Đăng ký nhận tin tức và ưu đãi đặc biệt từ chúng tôi.</p>
+    <form className="flex flex-col md:flex-row items-center justify-center">
+      <input
+        type="email"
+        className="border border-gray-300 py-2 px-4 rounded-lg mb-4 md:mb-0 md:mr-4 w-full md:w-1/2"
+        placeholder="Nhập email của bạn"
+      />
+      <button className="bg-orange-600 text-white py-2 px-6 rounded-lg shadow-md hover:bg-orange-700">Đăng Ký</button>
+    </form>
+  </div>
+</section>
+<section className="py-12">
+<iframe
+  className="w-full h-[315px] rounded-lg shadow-lg" 
+  src="https://www.youtube.com/embed/WdWEMXnHBVI"
+  title="Video"
+  frameBorder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowFullScreen
+></iframe>
+
+</section>
+
+
+<section className="py-12 bg-gray-50">
+  <div className="container mx-auto px-5">
+    <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">Nhận Xét Của Khách Hàng</h2>
+    <div className="flex flex-col gap-8">
+      <div className="bg-white p-6 rounded-lg shadow-md">
+        <p className="text-gray-600">"Quán cà phê tuyệt vời! Cà phê thơm ngon và dịch vụ rất tốt."</p>
+        <p className="text-gray-800 font-semibold mt-2">- Nguyễn Văn A</p>
+      </div>
+      <div className="bg-white p-6 rounded-lg shadow-md">
+        <p className="text-gray-600">"Môi trường thoải mái, lý tưởng để thư giãn và làm việc."</p>
+        <p className="text-gray-800 font-semibold mt-2">- Trần Thị B</p>
+      </div>
+      {/* Thêm nhiều nhận xét khác nếu cần */}
+    </div>
+  </div>
+</section>
+<section className="py-12">
+  <div className="container mx-auto px-5">
+    <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">Tin Tức Mới Nhất</h2>
+    <div className="flex flex-wrap gap-8">
+      <div className="w-full sm:w-1/2 lg:w-1/3">
+        <div className="bg-white p-6 rounded-lg shadow-md">
+          <img className="w-full h-48 object-cover rounded-t-lg" src="https://example.com/blog-image1.jpg" alt="Tin tức 1" />
+          <h3 className="text-xl font-semibold mt-4">Tiêu Đề Bài Viết 1</h3>
+          <p className="text-gray-600 mt-2">Một đoạn giới thiệu về bài viết này. Đây là nơi bạn có thể cung cấp thông tin ngắn gọn về nội dung của bài viết.</p>
+          <a href="#" className="text-blue-600 mt-4 block">Đọc Thêm</a>
+        </div>
+      </div>
+      {/* Thêm nhiều bài viết khác nếu cần */}
+    </div>
+  </div>
+</section>
+
     </div>
   );
 };
