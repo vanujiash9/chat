@@ -2,7 +2,7 @@
 export default {
   darkMode: 'class', // Enables dark mode using a class
   content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
+    "./src/**/*.{js,jsx,ts,tsx}", // Specifies the paths to all of your template files
   ],
   theme: {
     extend: {
@@ -18,7 +18,7 @@ export default {
       container: {
         center: true,
         padding: {
-          DEFAULT: "1rem", // Fixed typo here
+          DEFAULT: "1rem",
           sm: "2rem",
         },
       },

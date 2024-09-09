@@ -1,18 +1,18 @@
-import Banner from "../Banner";
-import Testimonial from "../Testimonial";
-import Footer from "../Footer";
-import AppStore from "../AppStore";
-import Navbar from "../Navbar";
-import Service from "../Service";
+import Banner from "./Banner";
+import Testimonial from "./Testimonial";
+import Footer from "../header/Footer";
+import Navbar from "./Navbar";
+import Service from "./Service";
+import Feedback from "./feedback";
 const Home = () => {
   return (
     <>
       <Navbar />
-      <Service/>
+      <Service />
 
       <Banner />
-      <AppStore />
       <Testimonial />
+      <Feedback />
       <Footer />
     </>
   );

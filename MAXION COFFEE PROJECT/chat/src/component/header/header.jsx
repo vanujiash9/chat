@@ -1,4 +1,4 @@
-import Logo from "../../assets/website/coffee_logo.png";
+import Logo from "../assets/website/coffee_logo.png";
 import { FaCoffee, FaShoppingCart, FaUser } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 
