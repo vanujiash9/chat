@@ -20,7 +20,7 @@ const Cart = () => {
         email: "david.kent@example.com",
         avatar: "https://baogiaothong.mediacdn.vn/upload/images/2019-4/article_img/2019-10-08/ho-1570498911-width800height559.jpg" // Example avatar URL
     });
-    const [ setPaymentMethod] = useState("Cash on Delivery"); // Default payment method
+    const [paymentMethod, setPaymentMethod] = useState("Cash on Delivery"); // Default payment method
     const [selectedPaymentMethod, setSelectedPaymentMethod] = useState("Cash on Delivery"); // Selected payment method
 
     useEffect(() => {
@@ -216,7 +216,12 @@ const Cart = () => {
                             <p>Tổng tiền</p>
                             <p>{finalPrice.toLocaleString()} VNĐ</p>
                         </div>
-                      
+                        <button
+                            className="bg-blue-500 text-white px-4 py-2 rounded"
+                            onClick={handleNoteSubmit}
+                        >
+                            Xác nhận đơn hàng
+                        </button>
                     </div>
                     <div className="bg-gray-100 p-6 mb-6 rounded-lg shadow-md">
                         <h2 className="text-xl font-semibold mb-4">Chọn phương thức thanh toán</h2>
@@ -244,6 +249,7 @@ const Cart = () => {
                         </div>
                         <button
                             className="bg-blue-500 text-white px-4 py-2 rounded mt-4"
+                            onClick={handlePaymentMethodConfirm}
                         >
                             Xác nhận phương thức thanh toán
                         </button>
@@ -324,7 +330,8 @@ const Cart = () => {
                             onChange={handleNoteChange}
                             className="w-full p-2 border border-gray-300 rounded mb-4"
                             rows="4"
-                            placeholder='Bạn có thể ghi chú ở đây'
+                            placeholder='Bạn có thể ghi thêm ghi chú ở đây'
+
                         />
                         <button
                             className="bg-blue-500 text-white px-4 py-2 rounded"

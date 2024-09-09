@@ -16,7 +16,6 @@ import Detailproduct from "./component/redux/slice/detailProduct"
 import Product3 from "./component/redux/slice/detailproduct2";
 import Feedback from "./component/Home/feedback";
 import Index from "./component/About/caresoult";
-import Checkout1 from "./component/Cart/checkout";
 const App = () => {
   useEffect(() => {
     AOS.init({
@@ -44,7 +43,6 @@ const App = () => {
             <Route path="detailproduct" element={<Detailproduct />} />
             <Route path="feedback" element={<Feedback />} />
             <Route path="caresoult" element={<Index/>} />
-            <Route path="checkout" element={<Checkout1 />} />
 
             <Route path="login" element={<Login />} />
           </Route>
