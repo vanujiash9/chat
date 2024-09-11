@@ -11,6 +11,7 @@ import imn6 from "../assets/website/e3615d551329c1343da0a052b4173ae6.jpg";
 import imn7 from "../assets/website/3c46922bbf6faa03c92f4b7fa29e233e.jpg";
 import imn8 from "../assets/website/166be34df841eff4d5a6303cb031d3b0.jpg";
 import imn9 from "../assets/website/1bbf21967acbd14e429803d4dbe29d49.jpg";
+import Index from "./feedback2";
 
 const Menu = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -39,7 +40,7 @@ const Menu = () => {
     <div className={`min-h-screen ${darkMode ? "bg-gray-900 text-gray-300" : "bg-white text-gray-900"}`}>
       <div className="relative overflow-hidden group h-[500px] bg-primary card-hidden">
         <img
-          src="https://images.unsplash.com/photo-1442975631115-c4f7b05b8a2c?q=80&w=1933&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          src="https://images.unsplash.com/photo-1527368746281-798b65e1ac6e?q=80&w=1975&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           className="h-full transition-all delay-300 duration-400 ease-in w-full absolute group-hover:scale-105 object-center"
           alt="Decorative background"
         />
@@ -94,14 +95,12 @@ const Menu = () => {
           <MenuCart img={imn4} title="Affogato" price="250.000" addToCart={() => addToCart({ img: imn4, title: "Affogato", price: "250.000" })} />
           <MenuCart img={imn8} title="Irish Coffee" price="280.000" addToCart={() => addToCart({ img: imn8, title: "Irish Coffee", price: "280.000" })} />
         </div>
-        <div className="mt-10">
-          <a href="/coffee/detailProduct" className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300">
-            Hãy thử cái đồ uống khác tại đây
-          </a>
-        </div>
+     
       </div>
       <Review />
+      <Index/>
       <Footer darkMode={darkMode} />
+
     </div>
   );
 };

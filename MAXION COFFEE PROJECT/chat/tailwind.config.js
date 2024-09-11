@@ -7,8 +7,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Poppins", "sans-serif"],
+        sans: ["Roboto", "sans-serif"],
         cursive: ["Pacifico", "cursive"],
+        serif: ["Playfair Display", "serif"],
       },
       colors: {
         primary: "#854d3d",

@@ -12,10 +12,13 @@ import Login from "./component/Auth/Login";
 import Contact from "./component/contact/Contact";
 import Register from "./component/Auth/Register";
 import Review from "./component/menu/review";
-import Detailproduct from "./component/redux/slice/detailProduct"
 import Product3 from "./component/redux/slice/detailproduct2";
 import Feedback from "./component/Home/feedback";
 import Index from "./component/About/caresoult";
+import Blog1 from "./component/blog/blog";
+import Profile from "./component/Profile/Profile";
+import Faq1 from "./component/contact/Faq";
+import Navigation from "./component/About/Navigation";
 const App = () => {
   useEffect(() => {
     AOS.init({
@@ -40,9 +43,12 @@ const App = () => {
             <Route path="register" element={<Register />} />
             <Route path="review" element={<Review />} />
             <Route path="product3" element={<Product3 />} />
-            <Route path="detailproduct" element={<Detailproduct />} />
             <Route path="feedback" element={<Feedback />} />
             <Route path="caresoult" element={<Index/>} />
+            <Route path="blog" element={<Blog1 />} />
+            <Route path="profile" element={<Profile />} />
+            <Route path="Faq" element={<Faq1/>} />
+            <Route path="navigation" element={<Navigation />} />
 
             <Route path="login" element={<Login />} />
           </Route>

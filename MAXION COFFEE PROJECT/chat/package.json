@@ -10,11 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource/playfair-display": "^5.0.26",
+    "@fontsource/roboto": "^5.0.15",
     "@reduxjs/toolkit": "^2.2.7",
     "aos": "^2.3.4",
-    "autoprefixer": "^10.4.19",
+    "autoprefixer": "^10.4.20",
     "formik": "^2.4.6",
-    "postcss": "^8.4.39",
+    "postcss": "^8.4.45",
     "prop-types": "^15.8.1",
     "pure-react-carousel": "^1.30.1",
     "react": "^18.3.1",
@@ -25,7 +27,7 @@
     "react-slick": "^0.30.2",
     "slick-carousel": "^1.8.1",
     "sweetalert2": "^11.13.2",
-    "tailwindcss": "^3.4.6",
+    "tailwindcss": "^3.4.10",
     "typed.js": "^2.1.0",
     "yup": "^1.4.0"
   },

@@ -32,7 +32,7 @@ const Service = () => {
         <div className="container">
           {/* Heading section */}
           <div className="text-center mb-20">
-            <h1 className="text-4xl font-bold font-cursive text-gray-800">
+            <h1 className="text-4xl font-bold  text-gray-800">
               Các Loại Cà Phê Tuyệt Vời
             </h1>
           </div>
@@ -46,16 +46,16 @@ const Service = () => {
                 key={service.id}
                 className="rounded-2xl bg-white hover:bg-blue-950 hover:text-white relative shadow-xl duration-300 group max-w-[300px]"
               >
-                <div className="h-[122px]">
+                <div className="h-[150px]">
                   <img
                     src={service.img}
                     alt={service.name}
-                    className="max-w-[200px] block mx-auto transform -translate-y-14 group-hover:scale-105 group-hover:rotate-6 duration-300"
+                    className="max-w-[200px] block mx-auto transform -translate-y-12 group-hover:scale-105 group-hover:rotate-3 duration-300"
                   />
                 </div>
-                <div className="p-4 text-center">
-                  <h1 className="text-xl font-bold">{service.name}</h1>
-                  <p className="text-gray-500 group-hover:text-white duration-300 text-sm line-clamp-2">
+                <div className="p-6 text-center">
+                  <h1 className="text-2xl font-semibold">{service.name}</h1>
+                  <p className="text-gray-600 group-hover:text-white duration-300 text-base line-clamp-3">
                     {service.description}
                   </p>
                 </div>

@@ -73,7 +73,7 @@ const Testimonial = () => {
         <div className="mb-10">
           <h1
             data-aos="fade-up"
-            className="text-center text-4xl font-bold font-cursive"
+            className="text-center text-4xl font-bold "
           >
             Ý Kiến Khách Hàng
           </h1>
